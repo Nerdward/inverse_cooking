@@ -6,7 +6,7 @@ This code uses Python 3.6 and PyTorch 0.4.1 cuda version 9.0.
 
 - Creating virtual environment:
 ```bash
-conda create -n inv_cooking python=3.6
+conda create -n inv_cooking
 ```
 - Activate the virtual environment
 ```bash
