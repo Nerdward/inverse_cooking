@@ -75,15 +75,24 @@ def predict(model, ingrs_vocab, vocab, image_tensor):
             num_valid+=1
             BOLD = '\033[1m'
             END = '\033[0m'
+            recipe_number = f"RECIPE {num_valid}"
+            title = f"""
+                    {outs['title']}
+                    """  
+            ingredients = """
+                        INGREDIENTS:
+                        """ + ",".join(outs['ingrs'])
+            instructions = '-'+'\n-'.join(outs['recipe'])
+            
+            return recipe_number + title + ingredients + instructions
+                                    
 
-            recipes[num_valid] = {
-                                    "RECIPE": num_valid,
-                                    "title": f"{BOLD} + '\nTitle:' + {END},{outs['title']}",
-                                    "INGREDIENTS": f"{BOLD} + '\nIngredients:'+ {END}",
-                                    "INGREDIENTS2": ",".join(outs['ingrs']),
-                                    "INSTRUCTIONS": BOLD + '\nInstructions:'+END,
-                                    "INSTRUCTIONS2": '-'+'\n-'.join(outs['recipe'])
-                                }
+#             recipes[num_valid] = {
+#                                     "RECIPE": num_valid,
+#                                     "TITLE": f"{outs['title']}",
+#                                     "INGREDIENTS": ",".join(outs['ingrs']),
+#                                     "INSTRUCTIONS": '-'+'\n-'.join(outs['recipe'])
+#                                 }
             
             # print ('RECIPE', num_valid)
             # num_valid+=1
@@ -104,4 +113,4 @@ def predict(model, ingrs_vocab, vocab, image_tensor):
             pass
             print ("Not a valid recipe!")
             print ("Reason: ", valid['reason'])
-    return recipes
+        # return recipe_number + title + ingredients + instructions
