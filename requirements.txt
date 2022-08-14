@@ -12,3 +12,4 @@ tensorboardX
 python-multipart
 fastapi
 uvicorn
+streamlit

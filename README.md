@@ -1,4 +1,9 @@
-## Inverse Cooking: Recipe Generation from Food Images
+## FoodAI 
+
+## Table of contents
+1. [Installation guide](#installation)
+2. [Backend](#backend-server)
+3. [Frontend](#frontend)
 
 ### Installation
 
@@ -29,30 +34,30 @@ $ pip install -r requirements.txt
 $ make artifacts
 ```
 
-### Demo
-
-You can use our pretrained model to get recipes for your images.
-
-Download the required files (listed above), place them under the ```data``` directory, and try our demo notebook ```src/demo.ipynb```.
-
-Note: The demo will run on GPU if a device is found, else it will use CPU.
-
-### Data
-
-- Download [Recipe1M](http://im2recipe.csail.mit.edu/dataset/download) (registration required)
-- Extract files somewhere (we refer to this path as ```path_to_dataset```).
-- The contents of ```path_to_dataset``` should be the following:
+### Backend Server
+- To start up the fast api and uvicorn server
+```bash
+$ cd app
 ```
-det_ingrs.json
-layer1.json
-layer2.json
-images/
-images/train
-images/val
-images/test
+```bash
+$ uvicorn app.api:app \       # location of app (`app` directory                       >`api.py` script > `app` object)
+    --host 0.0.0.0 \        # localhost
+    --port 8000 \           # port 8000
+    --reload \              # reload every time we update
+    --reload-dir tagifai \  # only reload on updates to `tagifai` directory
+    --reload-dir app        # and the `app` directory
 ```
 
-*Note: all python calls below must be run from ```./src```*
+### Frontend
+- To start up the streamlit frontend server, run
+```bash
+$ cd frontend
+```
+
+```bash
+$ streamlit run home.py
+```
+
 
 Code supporting the paper:
 
