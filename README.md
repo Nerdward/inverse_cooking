@@ -61,6 +61,7 @@ $ cd frontend
 ```bash
 $ streamlit run home.py
 ```
+- Go to localhost on browser, copy http://localhost:8501
 
 
 Code supporting the paper:
