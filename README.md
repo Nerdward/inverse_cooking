@@ -40,7 +40,7 @@ $ make artifacts
 $ cd app
 ```
 ```bash
-$ uvicorn app.api:app \       # location of app (`app` directory                       >`api.py` script > `app` object)
+$ uvicorn app.api:app \       # location of app (`app` directory >`api.py` script > `app` object)
     --host 0.0.0.0 \        # localhost
     --port 8000 \           # port 8000
     --reload \              # reload every time we update
