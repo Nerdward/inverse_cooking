@@ -8,6 +8,10 @@
 ### Installation
 
 This code uses Python 3.6 and PyTorch 0.4.1 cuda version 9.0.
+- Packages setup
+```bash
+$ pip install --editable .
+```
 
 - Creating virtual environment:
 ```bash
