@@ -14,22 +14,24 @@ st.write(
     """
 )
 
-uploaded_file = st.file_uploader("Choose a file",type=['png','jpeg','jpg'])
-
-st.write(" ### 0R")
-
-img_file_buffer = st.camera_input("Take a picture of the food")
+col1, col2 = st.columns(2)
+with col1:
+    uploaded_file = st.file_uploader("Choose a file",type=['png','jpeg','jpg'])
+    
+with col2:
+    img_file_buffer = st.camera_input("Take a picture of the food")
 
 if st.button("Generate"):
-    if uploaded_file is not None:
-        files = {"file": uploaded_file.getvalue()}
-        response = requests.post('http://127.0.0.1:8000/predict',files=files)
-        recipe = response.text
-        st.success(f'The generated recipe is \n{recipe}')
-    else:
-        files = {"file": img_file_buffer.getvalue()}
-        response = requests.post('http://127.0.0.1:8000/predict',files=files)
-        recipe = response.text
-        st.success(f'The generated recipe is \n{recipe}')
+    with st.spinner("Generating the recipe:"):
+        if uploaded_file is not None:
+            files = {"file": uploaded_file.getvalue()}
+            response = requests.post('http://127.0.0.1:8000/predict',files=files)
+            recipe = response.text
+            st.json(recipe)
+        else:
+            files = {"file": img_file_buffer.getvalue()}
+            response = requests.post('http://127.0.0.1:8000/predict',files=files)
+            recipe = response.text
+            st.json(recipe)
 # print(type(uploaded_file))
 # print(uploaded_file)

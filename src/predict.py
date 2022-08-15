@@ -84,7 +84,13 @@ def predict(model, ingrs_vocab, vocab, image_tensor):
                         """ + ",".join(outs['ingrs'])
             instructions = '-'+'\n-'.join(outs['recipe'])
             
-            return recipe_number + title + ingredients + instructions
+            # return recipe_number + title + ingredients + instructions
+            return {
+                        "RECIPE": num_valid,
+                        "TITLE": f"{outs['title']}",
+                        "INGREDIENTS": ",".join(outs['ingrs']),
+                        "INSTRUCTIONS": '-'+'\n-'.join(outs['recipe'])
+                    }
                                     
 
 #             recipes[num_valid] = {

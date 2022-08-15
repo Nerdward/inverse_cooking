@@ -13,7 +13,7 @@ st.markdown(
     """
     FoodAI is a project from Hamoye that uses AI to assist you in
     the kitchen. It can also generate recipes of food from just
-    images of the meal.\n **👈 Select a model from the sidebar** to
+    images of the meal.  **👈 Select a model from the sidebar** to
     see what it can do.
     
     ### Want to learn more?
