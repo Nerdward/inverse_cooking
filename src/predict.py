@@ -42,8 +42,13 @@ def load_artifacts(ingr_path, vocab_path, model_path):
     args = get_parser()
     args.maxseqlen = 15
     args.ingrs_only=False
-    ingrs_vocab = pickle.load(open(ingr_path, 'rb'))
-    vocab = pickle.load(open(vocab_path, 'rb'))
+    
+    with open(ingr_path, "rb") as f:
+        ingrs_vocab = pickle.load(f)
+    with open(vocab_path, "rb") as f:
+        ingrs_vocab = pickle.load(f)
+    # ingrs_vocab = pickle.load(open(ingr_path, 'rb'))
+    # vocab = pickle.load(open(vocab_path, 'rb'))
 
     ingr_vocab_size = len(ingrs_vocab)
     instrs_vocab_size = len(vocab)
