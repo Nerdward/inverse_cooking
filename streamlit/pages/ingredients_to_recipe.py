@@ -27,7 +27,7 @@ def _generate(rawtext : str):
     return text
 
 def _ingredients(file):
-    with open("../app/labels.txt") as f:
+    with open(Path(BASE_DIR, "../app/labels.txt")) as f:
         data = f.read()
     d = json.loads(data)
     model = keras.models.load_model("../classifier") 
