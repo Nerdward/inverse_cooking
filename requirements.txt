@@ -11,5 +11,5 @@ tensorflow
 tensorboardX
 streamlit
 scikit-image
--e git+https://github.com/Nerdward/inverse_cooking.git@25f1a939a5f239cdb4281d950f2e04f29546b235#egg=src
+-e git+https://github.com/Nerdward/inverse_cooking.git@47e25b10d5c0fa661ce6775d3ee2020da0f18777#egg=src
 transformers

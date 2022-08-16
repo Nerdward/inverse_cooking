@@ -29,8 +29,6 @@ src/utils/ims2file.py
 src/utils/metrics.py
 src/utils/output_utils.py
 src/utils/tb_visualizer.py
-streamlit/__init__.py
 streamlit/home.py
-streamlit/pages/__init__.py
 streamlit/pages/image_to_recipe.py
 streamlit/pages/ingredients_to_recipe.py

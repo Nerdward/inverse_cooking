@@ -46,7 +46,7 @@ def load_artifacts(ingr_path, vocab_path, model_path):
     with open(ingr_path, "rb") as f:
         ingrs_vocab = pickle.load(f)
     with open(vocab_path, "rb") as f:
-        ingrs_vocab = pickle.load(f)
+        vocab = pickle.load(f)
     # ingrs_vocab = pickle.load(open(ingr_path, 'rb'))
     # vocab = pickle.load(open(vocab_path, 'rb'))
 

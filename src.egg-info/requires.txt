@@ -9,8 +9,6 @@ tqdm
 lmdb
 tensorflow
 tensorboardX
-python-multipart
-fastapi
-uvicorn
 streamlit
 scikit-image
+transformers
