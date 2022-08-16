@@ -9,7 +9,9 @@ from io import BytesIO
 import numpy as np
 from skimage import transform
 import json
+from pathlib import Path
 
+BASE_DIR = Path(__file__).parent
 def load(filename):   
     np_image = Image.open(BytesIO(filename))
     np_image = np.array(np_image).astype('float32')/255
@@ -77,7 +79,7 @@ st.write(
     """
 )
 
-with open('pages/ingredients.npy', 'rb') as f:
+with open(Path(BASE_DIR, "ingredients.npy"), 'rb') as f:
     ing = np.load(f)
 
 # title = st.text_input('Comma-separated ingredients',)
