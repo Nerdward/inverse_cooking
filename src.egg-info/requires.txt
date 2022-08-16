@@ -1,0 +1,16 @@
+numpy
+scipy
+matplotlib
+torch
+torchvision
+nltk
+Pillow
+tqdm
+lmdb
+tensorflow
+tensorboardX
+python-multipart
+fastapi
+uvicorn
+streamlit
+scikit-image

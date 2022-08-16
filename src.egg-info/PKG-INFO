@@ -1,0 +1,5 @@
+Metadata-Version: 2.1
+Name: src
+Version: 0.1
+Summary: Cooking recipe recommendation
+Requires-Python: >=3.6
