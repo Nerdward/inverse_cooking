@@ -15,3 +15,4 @@ scikit-image
 # -e git+https://github.com/Nerdward/inverse_cooking.git@25f1a939a5f239cdb4281d950f2e04f29546b235#egg=src
 -e git+https://github.com/Nerdward/inverse_cooking.git@e0080440bf49b0ed4504acd172459567f15b4d49#egg=src
 transformers
+
