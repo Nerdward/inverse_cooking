@@ -30,7 +30,7 @@ def _ingredients(file):
     with open(Path(Path(__file__).parents[2], "app/labels.txt")) as f:
         data = f.read()
     d = json.loads(data)
-    model = keras.models.load_model("../classifier") 
+    model = keras.models.load_model(Path(Path(__file__).parents[2], "classifier")) 
     test = load(file.read())
     pred = model.predict(test)
     pred = np.argmax(pred,axis=1)
