@@ -67,10 +67,10 @@ if st.button("Generate"):
     with st.spinner('Generating recipes'):
         if uploaded_file is not None:
             recipe = _ingredients(uploaded_file)
-            st.success(f'The generated recipe is \n{recipe}')
+            st.json(recipe)
         else:
             recipe = _ingredients(uploaded_file)
-            st.success(f'The generated recipe is \n{recipe}')
+            st.json(recipe)
 
 
 st.write(
