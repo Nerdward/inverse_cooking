@@ -14,4 +14,4 @@ fastapi
 uvicorn
 streamlit
 scikit-image
--e
+-e .
