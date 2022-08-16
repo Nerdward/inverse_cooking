@@ -11,7 +11,7 @@ setup(
     name = "src",
     version=0.1,
     description='Cooking recipe recommendation',
-    python_requires=">=3.8",
+    python_requires=">=3.6",
     packages=find_namespace_packages(),
     install_requires=[required_packages]
 )
