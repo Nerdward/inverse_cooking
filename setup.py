@@ -9,7 +9,7 @@ with open(Path(BASE_DIR, "requirements.txt"), "r") as file:
 #Define facebook package
 setup(
     name = "src",
-    version=0.1,
+    version=0.2,
     description='Cooking recipe recommendation',
     python_requires=">=3.6",
     packages=find_namespace_packages(),
