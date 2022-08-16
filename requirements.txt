@@ -14,4 +14,4 @@ fastapi
 uvicorn
 streamlit
 scikit-image
--e git+https://github.com/Nerdward/inverse_cooking.git@294bcf00b545b64ba0fe7581ef83eceee4604db7#egg=src
+-e git+https://github.com/Nerdward/inverse_cooking.git
