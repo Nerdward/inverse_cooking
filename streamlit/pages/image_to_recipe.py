@@ -4,12 +4,14 @@ import numpy as np
 import requests
 from src.predict import *
 from src import generate
+from pathlib import Path
 
+BASE_DIR = Path(__file__).parents[2]
 @st.cache()
 def load_app_artifacts():
-    model, ingrs_vocab, vocab = load_artifacts(ingr_path='../app/artifacts/ingr_vocab.pkl',
-    vocab_path='../app/artifacts/instr_vocab.pkl',
-    model_path='../app/artifacts/modelbest.ckpt')
+    model, ingrs_vocab, vocab = load_artifacts(ingr_path=Path(BASE_DIR, 'app/artifacts/ingr_vocab.pkl'),
+    vocab_path=Path(BASE_DIR, 'app/artifacts/instr_vocab.pkl'),
+    model_path=Path(BASE_DIR, 'app/artifacts/modelbest.ckpt'))
     
     return model, ingrs_vocab, vocab
 
