@@ -106,12 +106,12 @@ venv.bak/
 
 # mypy
 .mypy_cache/
-*.pkl
+# *.pkl
 *.png
 *.json
 *.nfs*
 *.tex
 .idea/
 *.bin
-*.ckpt
+# *.ckpt
 **/*.520
