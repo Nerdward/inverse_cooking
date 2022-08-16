@@ -7,7 +7,7 @@ from src import generate
 from pathlib import Path
 
 BASE_DIR = Path(__file__).parents[2]
-@st.cache()
+# @st.cache()
 def load_app_artifacts():
     model, ingrs_vocab, vocab = load_artifacts(ingr_path=Path(BASE_DIR, 'app/artifacts/ingr_vocab.pkl'),
     vocab_path=Path(BASE_DIR, 'app/artifacts/instr_vocab.pkl'),
