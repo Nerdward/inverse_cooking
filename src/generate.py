@@ -163,7 +163,10 @@ def main(raw_text,):
     markdown = markdown.replace("<INSTR_START>", "## Instructions ##\n1) ").replace("<NEXT_INSTR>", "\n1) ").replace("<INSTR_END>", "\n")
     markdown = re.sub("$ +#", "#", markdown)
     markdown = re.sub("( +`|` +)", "`", markdown)
-    return title+markdown
+    return {
+        "Title": title,
+        "Instructions": markdown
+    }
     
     # return text
 

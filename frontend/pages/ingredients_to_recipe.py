@@ -41,22 +41,25 @@ st.write(
     """
 )
 
+with open('pages/ingredients.npy', 'rb') as f:
+    ing = np.load(f)
 
-title = st.text_input('Comma-separated ingredients',)
+# title = st.text_input('Comma-separated ingredients',)
+title = st.multiselect('Choose your ingredients',options=ing)
 recommend = st.checkbox("Recommend Ingredients")
 if st.button("Predict"):
     if title is not None:
         if not recommend:
-            data = {'rawtext': title + ';'}
+            data = {'rawtext': ','.join(title) + ';'}
             # print(title)
             # print(data)
             response = requests.post('http://127.0.0.1:8000/generate',params=data)
             recipe = response.text
-            st.write(recipe)
+            st.json(recipe)
         else:
             data = {'rawtext': title}
             # print(title)
             # print(data)
             response = requests.post('http://127.0.0.1:8000/generate',params=data)
             recipe = response.text
-            st.write(recipe)
+            st.json(recipe)
