@@ -26,6 +26,7 @@ def _generate(rawtext : str):
     
     return text
 
+@st.cache()
 def _ingredients(file):
     with open(Path(Path(__file__).parents[2], "app/labels.txt")) as f:
         data = f.read()
