@@ -20,7 +20,7 @@ def load(filename):
     
     return np_image
 
-@st.cache()
+@st.cache(persist=True)
 def _generate(rawtext : str):
     text = generate.main(rawtext)
     
