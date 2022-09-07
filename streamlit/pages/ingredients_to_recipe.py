@@ -46,7 +46,7 @@ def _ingredients(file):
     for k in pred:
         text = text + d[str(k)] + ','
     text = text[:-1] + ';'
-    text = generate.main(text)
+    # text = generate.main(text)
     return text
 
 st.set_page_config(page_title="Ingredients to Recipe", page_icon="🤖")
@@ -73,10 +73,14 @@ if uploaded_file or img_file_buffer is not None:
     if st.button("Generate"):
         with st.spinner('Generating recipes'):
             if uploaded_file is not None:
-                recipe = _ingredients(uploaded_file)
+                text = _ingredients(uploaded_file)
+                st.write(text)
+                recipe = _generate(text)
                 st.json(recipe)
             elif img_file_buffer is not None:
                 recipe = _ingredients(img_file_buffer)
+                st.write(text)
+                recipe = _generate(text)
                 st.json(recipe)
 
 st.write(
